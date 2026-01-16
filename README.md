@@ -30,19 +30,18 @@ The workflow is structured as follows:
 * Input: multi-channel RGB composite immunofluorescence images
 * Output: tissue probability maps used for islet segmentation
 
-### `CellProfiler_Pipeline.cppipe`
+### `20240130_Trial_04_Base_10_Binary_Cells_V3_Intensity_Exclusion.cpproj`
 
-* CellProfiler pipeline for:
+* CellProfiler project for:
 
-  * Importing probability maps and DAPI-stained images
-  * Segmenting nuclei using StarDist
+  * Importing probability maps and segmented DAPI-stained images
   * Identifying cytoplasm boundaries
   * Quantifying intensity of protein and hormone markers at the single-cell level
   * Exporting measurements to `.csv` for downstream statistical analysis
 
 ### `analysis_script.Rmd`
 
-* Annotated RMarkdown script for:
+* Annotated R script for:
 
   * Cleaning CellProfiler output
   * Assigning hormone identity to each cell (insulin+, glucagon+)
@@ -52,7 +51,7 @@ The workflow is structured as follows:
 
 ## Experimental Design Summary
 
-* **Tissue Source**: Human pancreas tissue obtained from the **Quality in Organ Donation (QUOD) biobank**.
+* **Tissue Source**: Human pancreas tissue obtained from the **Quality in Organ Donation (QUOD) biobank in Newcastle**.
 * **Experimental Groups**: Samples selected across defined experimental criteria (e.g., donor age, sex, or clinical status), grouped for statistical comparison. Specific group details are defined in metadata (not included in this repository).
 * **Staining Panel**: Multiplex immunofluorescence for NOX5, insulin, glucagon, and nuclear marker DAPI.
 * **Imaging**: High-resolution fluorescence microscopy performed under identical settings across all samples to ensure quantitative comparability.
