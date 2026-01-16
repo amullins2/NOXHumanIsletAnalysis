@@ -1,6 +1,6 @@
 # Human Islet Immunofluorescence Analysis Pipeline
 
-This repository contains the complete image analysis and statistical pipeline for quantifying intracellular protein expression in single human pancreatic islet cells using multiplex immunofluorescence, semantic segmentation, and linear mixed modeling (LMM). The approach is optimized to assess differences in protein intensity (e.g., NOX5) across endocrine cell types (insulin+, glucagon+) within human donor tissue.
+This repository contains the complete image analysis and statistical pipeline for quantifying intracellular protein expression in single human pancreatic islet cells using multiplex immunofluorescence, semantic segmentation, and linear mixed modeling (LMM). The approach is optimised to assess differences in protein intensity (e.g., NOX5) across endocrine cell types (insulin+, glucagon+) within human donor tissue.
 
 ## Overview
 
@@ -14,7 +14,7 @@ The workflow is structured as follows:
 
 ## Repository Contents
 
-### 📁 `ImageJ_Macro.ijm`
+### `GMMacro.ijm` and `exocrinemacro.ijm`
 
 * Custom ImageJ macro developed for batch image preprocessing. Functions include:
 
@@ -24,13 +24,13 @@ The workflow is structured as follows:
   * Subtraction of non-nuclear background
   * Saving composite files and probability-ready inputs
 
-### 📁 `20241104_AG_V2.ilp`
+### `20241104_AG_V2.ilp`
 
 * Ilastik pixel classification project file for identifying tissue and islet compartments.
 * Input: multi-channel RGB composite immunofluorescence images
 * Output: tissue probability maps used for islet segmentation
 
-### 📁 `CellProfiler_Pipeline.cppipe`
+### `CellProfiler_Pipeline.cppipe`
 
 * CellProfiler pipeline for:
 
@@ -40,15 +40,15 @@ The workflow is structured as follows:
   * Quantifying intensity of protein and hormone markers at the single-cell level
   * Exporting measurements to `.csv` for downstream statistical analysis
 
-### 📁 `analysis_script.Rmd`
+### `analysis_script.Rmd`
 
 * Annotated RMarkdown script for:
 
   * Cleaning CellProfiler output
   * Assigning hormone identity to each cell (insulin+, glucagon+)
-  * Normalizing fluorescence intensities
+  * Normalising fluorescence intensities
   * Fitting linear mixed-effects models to compare protein levels between cell types and donor groups
-  * Visualizing cell-level and group-level effects (plots not included in this repository)
+  * Visualising cell-level and group-level effects (plots not included in this repository)
 
 ## Experimental Design Summary
 
